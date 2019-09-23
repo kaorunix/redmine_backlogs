@@ -170,9 +170,9 @@ if [ -L "$PATH_TO_PLUGINS/redmine_backlogs" ]; then rm "$PATH_TO_PLUGINS/redmine
 ln -s "$PATH_TO_BACKLOGS" "$PATH_TO_PLUGINS/redmine_backlogs"
 
 # copy database.yml
-cp $WORKSPACE/database.yml config/
+#cp $WORKSPACE/database.yml config/
 if [ "$RUBYVER" = "1.8" ]; then
-  sed -i -e 's/mysql2/mysql/g' config/database.yml
+#  sed -i -e 's/mysql2/mysql/g' config/database.yml
 fi
 
 export DBNAME=`ruby -e "require 'yaml'; puts YAML::load(open('config/database.yml'))['$RAILS_ENV']['database']"`
